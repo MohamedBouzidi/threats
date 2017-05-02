@@ -1,0 +1,23 @@
+%h1.page-header Reports
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading Threat History
+      .panel-body
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading Top Risks
+      .panel-body
+        %table.table.table-hover
+          %thead
+            %tr
+              %th #
+              %th Name
+              %th Description
+          %tbody
+          - @risks.each do |risk|
+            %tr
+              %td= risk['id']
+              %td= risk['name']
+              %td= risk['description']
