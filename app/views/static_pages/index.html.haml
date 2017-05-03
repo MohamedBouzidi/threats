@@ -1,6 +1,6 @@
 %h1.page-header Dashboard
 .row
-  .col-md-8
+  .col-md-9
     .panel.panel-default
       .panel-heading Real-Time Attacks
       .panel-body  
@@ -10,6 +10,7 @@
             %thead
               %tr
                 %th Name
+                %th Threat
                 %th Attacker
                 %th Attacker IP
                 %th Attacker Geo
@@ -17,9 +18,24 @@
                 %th Target IP
                 %th Target Geo
             %tbody
-            
+              - @attacks.each do |attack|
+                %tr
+                  %td= attack.name
+                  %td= attack.threat.name
+                  %td= attack.attacker
+                  %td= attack.attacker_ip
+                  %td= attack.attacker_geo
+                  %td= attack.target
+                  %td= attack.target_ip
+                  %td= attack.target_geo
+              %tr
+                %td{"colspan": "7"}
+                  .load-more-container
+                    = link_to "Load More", "#", class: 'btn btn-default btn-sm'
+                    = image_tag 'loading.gif', style: 'display: none'
 
-  .col-md-4
+
+  .col-md-3
     .panel.panel-default
       .panel-heading Main
       .panel-body
