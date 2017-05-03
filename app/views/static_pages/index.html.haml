@@ -3,14 +3,27 @@
   .col-md-8
     .panel.panel-default
       .panel-heading Real-Time Attacks
-      .panel-body
-        .bullets
-          %button.btn.btn-default.btn-sm Update
+      .panel-body  
+        / %button.btn.btn-default.btn-sm Update
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th Name
+                %th Attacker
+                %th Attacker IP
+                %th Attacker Geo
+                %th Target
+                %th Target IP
+                %th Target Geo
+            %tbody
+            
+
   .col-md-4
     .panel.panel-default
       .panel-heading Main
       .panel-body
-        %canvas#main-gauge
+        %canvas#gauge
 
 .row
   .col-md-4

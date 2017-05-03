@@ -9,6 +9,8 @@ end
 
 gem 'rails', '~> 5.0.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'faker', '~> 1.7', '>= 1.7.3'
+gem 'jquery-turbolinks', '~> 2.1'
 gem 'haml', '~> 5.0'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'

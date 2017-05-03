@@ -9,15 +9,14 @@
     .panel.panel-default
       .panel-heading Top Risks
       .panel-body
-        %table.table.table-hover
-          %thead
-            %tr
-              %th #
-              %th Name
-              %th Description
-          %tbody
-          - @risks.each do |risk|
-            %tr
-              %td= risk['id']
-              %td= risk['name']
-              %td= risk['description']
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th Name
+                %th Description
+                %th Risk
+                %th Discovered
+                %th Type
+            %tbody
+          

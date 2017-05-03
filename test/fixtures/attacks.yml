@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  attacker: MyString
+  attacker_ip: MyString
+  attacker_geo: MyString
+  target: MyString
+  target_ip: MyString
+  target_geo: MyString
+
+two:
+  name: MyString
+  attacker: MyString
+  attacker_ip: MyString
+  attacker_geo: MyString
+  target: MyString
+  target_ip: MyString
+  target_geo: MyString
