@@ -18,3 +18,5 @@
 //= require gauge.min
 //= require gauge
 //= require static_pages
+//= require d3.v4.min
+//= require pie
