@@ -3,8 +3,7 @@
   .col-md-9
     .panel.panel-default
       .panel-heading Real-Time Attacks
-      .panel-body  
-        / %button.btn.btn-default.btn-sm Update
+      .panel-body
         .table-responsive
           %table.table
             %thead
@@ -17,9 +16,9 @@
                 %th Target
                 %th Target IP
                 %th Target Geo
-            %tbody
+            %tbody.attacks-container
               - @attacks.each do |attack|
-                %tr
+                %tr{ class: "record", "data-id": attack.id }
                   %td= attack.name
                   %td= attack.threat.name
                   %td= attack.attacker
@@ -28,11 +27,9 @@
                   %td= attack.target
                   %td= attack.target_ip
                   %td= attack.target_geo
-              %tr
-                %td{"colspan": "7"}
-                  .load-more-container
-                    = link_to "Load More", "#", class: 'btn btn-default btn-sm'
-                    = image_tag 'loading.gif', style: 'display: none'
+        .load-more-container
+          = link_to "Load More", root_path, class: 'btn btn-default btn-sm load-more'
+          = image_tag 'loading.gif', style: 'display: none', class: 'loading-gif'
 
 
   .col-md-3

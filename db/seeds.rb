@@ -20,7 +20,7 @@ end
   name = Faker::Name.name
   description = Faker::Lorem.sentence(3)
   risk = risk_levels[Random.rand(risk_levels.count)]
-  type_id = Random.rand(types.count)
+  type_id = 1 + Random.rand(types.count)
   Threat.create(name: name, description: description, risk: risk, date_discovered: Time.zone.now, type_id: type_id)
 end
 
@@ -32,6 +32,6 @@ end
   target = Faker::Name.name
   target_ip = Array.new(4){rand(256)}.join('.')
   target_geo = Faker::Name.name
-  threat_id = Random.rand(Threat.all.count)
+  threat_id = 1 + Random.rand(Threat.all.count)
   Attack.create(name: name, attacker: attacker, attacker_ip: attacker_ip, attacker_geo: attacker_geo, target: target, target_ip: target_ip, target_geo: target_geo, threat_id: threat_id)
 end

@@ -1,0 +1,18 @@
+<% if @attacks %>
+  <% @attacks.each do |attack| %>
+    $('.attacks-container').append(`
+      <tr class='record' data-id='<%= attack.id %>'>
+        <td><%= attack.name %></td>
+        <td><%= attack.threat.name %></td>
+        <td><%= attack.attacker %></td>
+        <td><%= attack.attacker_ip %></td>
+        <td><%= attack.attacker_geo %></td>
+        <td><%= attack.target %></td>
+        <td><%= attack.target_ip %></td>
+        <td><%= attack.target_geo %></td>
+      </tr>
+    `);
+  <% end %>
+<% else %>
+  $('.load-more').hide();
+<% end %>

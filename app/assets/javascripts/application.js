@@ -17,3 +17,4 @@
 //= require turbolinks
 //= require gauge.min
 //= require gauge
+//= require static_pages
