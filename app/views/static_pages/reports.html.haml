@@ -2,12 +2,12 @@
 .row
   .col-md-12
     .panel.panel-default
-      .panel-heading Threat History
+      .panel-heading Top Risks
       .panel-body
 .row
   .col-md-12
     .panel.panel-default
-      .panel-heading Top Risks
+      .panel-heading Threat History
       .panel-body
         .table-responsive
           %table.table
@@ -18,5 +18,14 @@
                 %th Risk
                 %th Discovered
                 %th Type
-            %tbody
+            %tbody.threats-container
+            - @threats.each do |threat|
+              %tr{ class: 'record', 'data-id': threat.id }
+                %td= threat.name
+                %td= threat.description
+                %td= threat.risk
+                %td= threat.date_discovered.strftime("%D")
+                %td= threat.type.name
+        .loading-animation
+          = image_tag 'loading.gif', style: 'display: none', class: 'loading-gif'
           

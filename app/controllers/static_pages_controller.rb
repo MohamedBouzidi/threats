@@ -13,6 +13,15 @@ class StaticPagesController < ApplicationController
   end
 
   def reports
+    if params[:id]
+      @threats = Threat.where('id < ?', params[:id]).limit(5)
+    else
+      @threats = Threat.limit(5)
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def analytics

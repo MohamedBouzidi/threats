@@ -1,0 +1,13 @@
+<% if @threats %>
+  <% @threats.each do |threat| %>
+    $('.threats-container').append(`
+      <tr class="record" data-id="<%= threat.id %>">
+        <td><%= threat.name %></td>
+        <td><%= threat.description %></td>
+        <td><%= threat.risk %></td>
+        <td><%= threat.date_discovered.strftime('%D') %></td>
+        <td><%= threat.type.name %></td>
+      </tr>
+    `);
+  <% end %>
+<% end %>
