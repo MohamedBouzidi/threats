@@ -1,0 +1,11 @@
+- if !@article.nil?
+  %h1.page-header= @article["title"]
+  %small{"style": "color: gray;"}= @article["pubDate"]
+  .row
+    .col-md-12
+      %small= @article["description"]
+      %hr/
+      - if @article["encoded"]
+        = @article["encoded"].html_safe
+      - else
+        = @article["description"].html_safe

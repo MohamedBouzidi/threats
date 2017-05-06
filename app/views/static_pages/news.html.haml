@@ -1,0 +1,14 @@
+%h1.page-header Breaking News
+.row
+  .col-md-6
+    %h4 Hacks
+    %ul.list-group
+      - @items.each_with_index do |item, index|
+        %li.list-group-item
+          %h3= link_to item["title"], articles_path(index, type: 'article')
+  .col-md-6
+    %h4 ThreatPost
+    %ul.list-group
+      - @threatposts.each_with_index do |item, index|
+        %li.list-group-item
+          %h3= link_to item["title"], articles_path(index, type: 'threatpost')

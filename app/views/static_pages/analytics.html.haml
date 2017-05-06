@@ -1,6 +1,9 @@
 %h1.page-header Analytics
 .row
-  .col-md-12
-    .panel.panel-default
-      .panel-heading Threat History
-      .panel-body
+  .col-md-8.col-md-offset-2
+    %script{ "src": "https://securityalerts.mcafee.com/mcalerts/en-us/AlertConstant.js" }        
+    %script{ "src": "https://securityalerts.mcafee.com/mcalerts/en-us/ResourceFile.js" }        
+    %script{ "src": "https://securityalerts.mcafee.com/mcalerts/AlertDisplay.js" }
+    %script
+      DisplayMcAfeeAlerts();
+                        
